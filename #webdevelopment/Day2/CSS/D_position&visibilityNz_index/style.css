@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.main{
+    margin: 20vh;
+    background-color: rgba(255, 0, 0, 0.362);
+    height:200vh;
+    width: 80vw;
+}
+.main div{
+    height: 18vh;
+    width: 18vw;
+}
+
+#child1{
+    background-color: brown;
+    position: absolute;
+    right: 5px;
+    
+}
+#child2{
+    background-color: orange;
+    position: relative;
+    top: 8px;
+    left: 12px;
+}
+#child3{
+    background-color: orangered;
+    position: fixed;
+    top: 2rem;
+    left: 30rem;
+}
+#child4{
+    background-color: blue;
+    position: sticky;
+    top: 2px;
+}

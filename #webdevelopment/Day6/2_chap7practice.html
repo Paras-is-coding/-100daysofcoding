@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manipulation and acces practice</title>
+    <style>
+        .navbar{
+            display:flex;
+            background-color: antiquewhite;
+
+        }
+        .navbar li{
+            padding: 10px;
+            margin: 10px;
+            list-style: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 600;
+        }
+
+        table,tr,th,td{
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+        table{
+            margin-top: 20px;
+        }
+        td,th{
+            padding: 4px;
+        }
+
+        .ele{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 4rem;
+        }
+        .child{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 500;
+            font-size: 2rem;
+            width: 10rem;
+            height: 10rem;
+            background-color: peru;
+            margin: 10px;
+            padding: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <li id="link1">Home</li>
+        <li id="link2">About</li>
+        <li id="link3">Contact</li>
+        <li id="link4">Other</li>
+    </nav>
+
+    <!-- create a table without tbody and see view page source to find if it is automatically added -->
+    <table>
+        <tr>
+            <th>Name</th>
+            <td>Paras</td>
+            <td>Simran</td>
+        </tr>
+        <tr>
+            <th>Age</th>
+            <td>22</td>
+            <td>24</td>
+        </tr>
+    </table>
+
+    <!-- create an element with 3 children and change color of first and last to green  -->
+    
+    <div class="ele">
+        <div class="child">I'm the first child</div>
+        <div class="child">I'm the second child</div>
+        <div class="child">I'm the third child</div>
+    </div>
+
+    <script>
+        //Q1 Create a navbar and change the color of first link to red
+        document.getElementsByClassName("navbar")[0].firstElementChild.style.color = "red";
+
+        //Q3 changing color of first and third div to green
+        let ele = document.getElementsByClassName("ele")[0];
+        ele.firstElementChild.style.color = "green";
+        ele.lastElementChild.style.color = "green";
+
+        //write the js code to change the color of li tage to peru
+        let lis = document.getElementsByTagName("li");
+        for(let it of lis){
+            it.style.backgroundColor = "peru";
+            it.style.borderRadius = "10px";
+        }
+    </script>
+
+    <!-- Last question is which of the following is used to look for the farthest ancestor that matches a given CSS selector OPTIONS: matches , closet, contains, none ANS: none -->
+</body>
+</html>

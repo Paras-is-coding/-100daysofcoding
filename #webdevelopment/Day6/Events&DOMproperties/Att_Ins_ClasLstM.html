@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute, insertion,classList methods</title>
+    <style>
+        body{
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: aliceblue;
+        }       
+        .box{
+            background-color: green;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="div1">
+        <span>Inside first div</span>
+    </div>
+    <div id="div2">
+        second div
+    </div>
+    <div id="div3">
+        third div
+    </div>
+
+    <script>
+        let div = document.getElementsByTagName("div");
+        console.log(div);
+        //looping into the divs 
+        let divs  = Array.from(div);
+        console.log(divs)
+        for(let it of divs){
+            console.log(it.hasAttribute("class"));
+            it.setAttribute("class","box");
+
+            console.log(it.classList.add("paras"));
+            console.log(it.classList)
+            console.log(it.attributes)
+            
+
+        }
+
+
+        // adding new element div 
+        let paras = document.createElement("div");
+        paras.innerHTML = "Hy i'm paras"
+        divs[1].insertAdjacentElement("afterend",paras);
+    </script>
+    
+</body>
+</html>

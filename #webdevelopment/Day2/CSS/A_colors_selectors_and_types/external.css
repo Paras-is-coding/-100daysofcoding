@@ -1,0 +1,28 @@
+/* this is external file of css we have to add it to html file */
+
+.main{
+    display: flex;
+
+}
+.box{
+
+    /* hexadecimal color format */
+    background-color: #8a2be2;
+    color: white;
+    margin: 2px 2px;
+}
+.main :nth-child(5),.main :nth-child(7){
+    
+    /* hsl/hsla color format */
+    border: 8px solid hsl(0, 0%, 0%);
+}
+
+#special{
+    /* directly specifying colors */
+    background-color: blue;
+
+    /* rgba/rgb color format */
+    border: 20px solid rgb(0, 0, 139)
+    ;
+    margin: 4px;
+}

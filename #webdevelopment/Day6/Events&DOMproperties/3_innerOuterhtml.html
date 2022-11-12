@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML, outerHTML and other properties</title>
+</head>
+<body>
+
+This text is inside body but not any element.
+<div class="main">This is division</div>    
+<span id="intro">Hy my name is Paras Chand</span>
+
+<script>
+    let x = document.getElementsByClassName("main")[0];
+
+    //element as DOM tree and as an object with properties respectively
+    console.log(x)
+    console.dir(x)
+
+
+    console.log("This is what inner html displays : " + x.innerHTML)
+    console.log("This is what outerHTML displays : "+x.outerHTML)
+    //if you want to display text only of page 
+    // console.log(document.body.textContent)
+
+    //innerhtml is valid only for element nodes for other node types we can use nodevalue or data
+console.log(document.body.firstChild.nodeValue)
+</script>
+</body>
+</html>

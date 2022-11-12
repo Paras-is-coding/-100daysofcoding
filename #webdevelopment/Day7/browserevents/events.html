@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>handeling browser events</title>
+    <style>
+        body{
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        .main{
+            min-height: 20vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+        }
+
+        #bulb{
+            margin: 4rem;
+            height: 2rem;
+            width: 2rem;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+        .glow{
+            box-shadow: 0 0 4px 2px white, 0 0 6px 3px blue,
+                0 0 8px 4px green,0 0 20px 8px blue,0 0 50px 20px blue;
+                background-color: rgb(7, 69, 254);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- //add different event listoner for different button when we click -->
+    <div class="main">
+        <button class="btn" id="btn1" onclick="alert('clicked box1')">one</button>
+        <button class="btn" id="btn2" onclick="alert('clicked box2')">two</button>
+        <button class="btn" id="btn3" onclick="alert('clicked box3')">three</button>
+    </div>
+    <!-- create a website which is capable of storing bookmarks of your fav websites -->
+    <div class="first">
+        <a href="https://www.google.com"><Button>Google</Button></a>
+    <a href="https://www.linkedin.com"><Button>linkedin</Button></a>
+    <a href="https://www.twitter.com"><Button>twitter</Button></a>
+    <a><button id="fb">Facebook</button></a>
+    </div>
+
+    <!-- Do it using event listoner -> see on js file -->
+
+
+    <!-- create a glowing bulb effect using toggle function is js -->
+    <div id="bulb" class="glow"></div>
+    <script src="script.js"></script>
+</body>
+</html>
