@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keep note in localstorage</title>
+</head>
+<body>
+    
+    <script>
+        let c = confirm("Add/Update note?");
+        if(c){
+            let note = prompt("Enter a note :");
+        localStorage.setItem("note",note);
+        }
+
+        let gnote = localStorage.getItem("note");
+        alert(`Your note is: ${gnote}`)
+
+        let d = confirm("Want to delete node?");
+        if(d){
+            localStorage.removeItem("note");
+        }
+
+    </script>
+</body>
+</html>

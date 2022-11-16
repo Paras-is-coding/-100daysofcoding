@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo list in local storage</title>
+    <style>
+        .flex_center_column{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+                }
+        .flex_center_row{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .list_container{
+            padding: 20px;
+            min-height: 50vh;
+            min-width: 80vw;
+            border: 4px solid black;
+        }
+    </style>
+</head>
+<body class="flex_center_column">
+    <div class="heading">
+        <h1>Make TODO List</h1>
+    </div>
+
+    <div class="list_container">
+
+    </div>
+
+    <script>
+        let list = document.getElementsByClassName("list_container")[0];
+        
+
+
+        let add = confirm("Want to add a thing to do ?");
+
+        if(add){
+            let thing = prompt("Enter a thing to do?");
+            localStorage.setItem(`${localStorage.length}`,thing);
+        }
+    let del = confirm("want to delete any iteam?")
+    if(del){
+        let no =prompt("Enter list number to be deleted : ")
+        localStorage.removeItem(no);
+    }
+
+    
+    let clear = confirm("want to clear the list?")
+    if(clear){
+        localStorage.clear();
+    }
+    
+    for(let j=0;j<localStorage.length;j++){
+                list.innerHTML + localStorage.getItem(j) + "<br>";
+            }
+
+    </script>
+</body>
+</html>
