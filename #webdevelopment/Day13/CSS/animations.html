@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition practice</title>
+    <style>
+        body{
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        #parent{
+            height: 70vh;
+            width: 70vh;
+            background-color: aliceblue;
+        }
+
+        #child{
+            height: 25%;
+            width: 25%;
+            background-color: blue;
+            animation: swing-ball 3s ease-in-out alternate infinite;
+
+        }
+        #parent:hover #child{
+            animation-play-state: paused;
+            /* animation: swing-ball 4s ease-in-out alternate infinite; */
+        }
+
+        @keyframes swing-ball {
+            0%{
+                transform: translate(0px);
+                
+            }
+            33%{
+                transform: translateY(300%);
+                background-color: yellow;
+            }
+            66%{
+                transform: translateX(300%) translateY(300%);
+                background-color:red;
+            }
+            100%{
+                transform: translateX(300%);
+                background-color: black;
+            }
+            
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="parent">
+        <div id="child">
+
+        </div>
+    </div>
+
+
+</body>
+</html>

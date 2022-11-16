@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>revision of media queries</title>
+    <style>
+*{
+    box-sizing: border-box;
+}
+body{
+text-align: center;
+    font-size: 10rem;
+    color: red;
+}
+
+
+@media screen and (max-width: 1000px) {
+    body{
+        color: green;
+    }
+}
+
+@media only print {
+    body{
+        color: blue;
+    }
+}
+
+@media (min-width:1200px) and (max-width:1500px) and (orientation:landscape){
+    body{
+        font-size: 12rem;
+        color: black;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+    <div id="1">Hello</div>
+    <div id="2">World!</div>
+
+    
+</body>
+</html>
