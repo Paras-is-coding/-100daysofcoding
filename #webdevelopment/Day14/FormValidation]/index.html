@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        form{
+            margin: 2rem;
+        }
+        .fdivs{
+            margin: .5rem;
+        }
+        input{
+            font-size: 1.5rem;
+            width: 50%;
+            margin: .5rem;
+            padding: .5rem;
+        }
+        label{
+            margin-right: 1rem;
+        }
+        .btn{
+            padding: .5rem;
+            margin: .5rem;
+            border-radius: .5rem;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <form name="validationForm" action="/file.php" method="post" onsubmit="return checkValidation()">
+        <div class="heading">
+            <h1>Form Validation Sample By Paras</h1>
+        </div>   
+        <div class="fdivs">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+            <span class="errormessage"></span>
+        </div>
+        <div class="fdivs">
+            <label for="email">Email</label>
+            <input type="emal" name="email" id="email">
+            <span class="errormessage"></span>
+        </div>
+        <div class="fdivs">
+            <label for="phone">Phone Number</label>
+            <input type="number" name="name" id="phone">
+            <span class="errormessage"></span>
+        </div>
+        <div class="fdivs">
+            <label for="psw">Password</label>
+            <input type="password" name="Password" id="psw">
+            <span class="errormessage"></span>
+        </div>
+        <div class="fdivs">
+            <label for="cpsw">Phone Number</label>
+            <input type="password" name="ConfirmPassword" id="cpsw">
+            <span class="errormessage"></span>
+        </div>
+        <div class="fdivs">
+            <button type="submit" class="btn">Submit</button>
+        </div>
+    </form>
+
+    <script>
+
+        function displayError(id,message){
+            let place = document.getElementById("id").nextElementSibling;
+            console.log(place);
+            place.innerHTML= message;
+        }
+
+        function checkValidation(){
+            let name = document.forms['validationForm']['name'].value;
+            if(name.length < 3){
+                displayError(name,"*The name can't be shorter than 3 letters!")
+                console.log(name)
+                return false;
+            }
+        }
+
+    </script>
+</body>
+</html>

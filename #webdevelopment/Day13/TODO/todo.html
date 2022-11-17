@@ -33,13 +33,14 @@
             margin: 0;
             padding: 0;
             min-height: 100vh;
-            min-width: 100vw;
+            width: 100vw;
         }
         #heading{
             margin: 1rem;
             padding: 0.5rem;
             text-align: center;
             min-height: 10vh;
+            width: auto;
             background-color: aliceblue;
             font-family: monospace;
             font-weight: bolder;
@@ -52,7 +53,7 @@
 
         #add_remove{
             min-height: 10vh;
-            min-width: 100vw;
+            width: 100vw;
             justify-content: flex-start;
         }
         #add{
@@ -68,9 +69,11 @@
         }     
         
         #notes{
+            margin: 1rem;
             min-height: 50vh;
-            min-width: 100vw;
+            width: 100vw;
             display: grid;
+            grid-gap: 1rem;
             grid-template-columns: repeat(3,auto);
             
         }
@@ -109,8 +112,8 @@
         }
 
         .box{
-            min-height: 6rem;
-            min-width: 4rem;
+            height: auto;
+            width: 10rem;
             background-color: white;
             box-shadow: 0 0 2px 1px black;
         }
@@ -184,6 +187,28 @@
 
         let form = document.getElementsByTagName("form")[0];
         form.style.display = "none";
+
+
+        let display = ()=>{
+            let notes = document.getElementById("notes");
+        let t = document.getElementsByClassName("t");
+        let d = document.getElementsByClassName("d");
+        let i=0;
+        for(key in localStorage){
+                notes.innerHTML = notes.innerHTML + `<div class="box flex_col">
+            <h3 class="t"></h3>
+            <p class="d"></p>
+            <button class="btn delete">Delete</button>
+        </div>`
+        t[i].innerHTML = key;
+        d[i].innerHTML = localStorage.getItem(key);
+        i++;
+        }
+        }
+        display();
+
+
+
         let plus = document.getElementById("plus");
         plus.addEventListener("click",()=>{
             if(form.style.display === "none"){
@@ -194,36 +219,62 @@
             }
         });
 
-        let add_button = document.getElementById("add");
         let avl = document.getElementById("add-value");
         let cancel = document.getElementById("cancel");
         let title = document.getElementById("title");
         let description = document.getElementById("description");
+        
 
         
         
         
         avl.addEventListener("click",()=>{
             localStorage.setItem(JSON.stringify(title.value),JSON.stringify(description.value));        
-            
+            display();
         })
-        avl.addEventListener("click",()=>{
-            let notes = document.getElementById("notes");
-        let t = document.getElementsByClassName("t");
-        let d = document.getElementsByClassName("d");
         
-            notes.innerHTML = `<div class="box flex_col">
-            <h3 class="t"></h3>
-            <p class="d"></p>
-            <button class="btn" id = "delete">Delete</button>
-        </div>`
-        t[0].innerHTML = "hello";
-        d[0].innerHTML = "hy";    
-        })
+        // avl.addEventListener("click",()=>{
+        //     let notes = document.getElementById("notes");
+        // let t = document.getElementsByClassName("t");
+        // let d = document.getElementsByClassName("d");
+        
+        //     notes.innerHTML = `<div class="box flex_col">
+        //     <h3 class="t"></h3>
+        //     <p class="d"></p>
+        //     <button class="btn delete">Delete</button>
+        // </div>`
+        // t[0].innerHTML = "hello";
+        // d[0].innerHTML = "hy";    
+        // })
+
+
+        
+
+
 
         cancel.addEventListener("click",()=>{
 
         })
+
+
+        let del = document.getElementsByClassName("delete");
+        console.log(del);
+        let arr = Array.from(del);
+        console.log(arr);
+        for(element of arr){
+            element.addEventListener("click",()=>{
+                console.log(element);
+                // localStorage.removeItem(element.closest(".box").firstElementChild().innerHTML);
+                let toBeDeleted = element.closest("h3")
+                console.log(toBeDeleted);
+                localStorage.removeItem(toBeDeleted);
+                display();
+                        })
+        }
+
+
+
+    
 
 
     </script>
