@@ -35,34 +35,34 @@
 </head>
 <body>
     
-    <form name="validationForm" action="/file.php" method="post" onsubmit="return checkValidation()">
+    <form name="validationForm" action="/file.php" method="post" >
         <div class="heading">
             <h1>Form Validation Sample By Paras</h1>
         </div>   
         <div class="fdivs">
             <label for="name">Name</label>
             <input type="text" name="name" id="name">
-            <span class="errormessage"></span>
+            <span id="ename"></span>
         </div>
         <div class="fdivs">
             <label for="email">Email</label>
             <input type="emal" name="email" id="email">
-            <span class="errormessage"></span>
+            <span id="eemail"></span>
         </div>
         <div class="fdivs">
             <label for="phone">Phone Number</label>
             <input type="number" name="name" id="phone">
-            <span class="errormessage"></span>
+            <span id="ephonenumber"></span>
         </div>
         <div class="fdivs">
             <label for="psw">Password</label>
             <input type="password" name="Password" id="psw">
-            <span class="errormessage"></span>
+            <span id="epassword"></span>
         </div>
         <div class="fdivs">
             <label for="cpsw">Phone Number</label>
             <input type="password" name="ConfirmPassword" id="cpsw">
-            <span class="errormessage"></span>
+            <span id="ecpassword"></span>
         </div>
         <div class="fdivs">
             <button type="submit" class="btn">Submit</button>
@@ -72,19 +72,20 @@
     <script>
 
         function displayError(id,message){
-            let place = document.getElementById("id").nextElementSibling;
-            console.log(place);
+            let place = document.getElementById(id);
             place.innerHTML= message;
         }
 
-        function checkValidation(){
+        function checkValidation(e){
             let name = document.forms['validationForm']['name'].value;
             if(name.length < 3){
-                displayError(name,"*The name can't be shorter than 3 letters!")
-                console.log(name)
-                return false;
+                displayError("ename","*The name can't be shorter than 3 letters!");
+                e.preventDefault();
             }
         }
+        let form = document.getElementsByTagName("form")[0];
+        form.addEventListener("submit",(e)=>{
+            checkValidation(e)})
 
     </script>
 </body>

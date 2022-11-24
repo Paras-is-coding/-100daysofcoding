@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(8, 0, 8, 0.375);
+    font-family: 'DynaPuff', cursive;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: url("bgimage.jpg") no-repeat center center/cover;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+#wrapper{
+    background-color: rgba(0, 0, 0, 0.284);
+    position: absolute;
+    /* border: 2px solid red; */
+    border-radius: 1rem;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    /* justify-content: center;  */
+    /* height: 3rem; */
+    width: 80vw;
+    overflow-x: hidden; 
+    overflow-y: hidden;
+    
+}
+
+#wrapper ul{
+    cursor: pointer;
+
+    /* border: 2px solid black; */
+    display: flex;
+    margin: 2px;
+    margin-left: 1rem;
+    height: max-content;
+
+    scroll-behavior: smooth; /* due to this dragging dont work soo*/
+
+    overflow-x: hidden;  
+}
+/* we will add this class while dragging */
+#topics.dragging{
+    scroll-behavior: auto;
+    cursor: grab;
+}
+#wrapper ul li{
+    color: white;
+    cursor: pointer;
+    list-style: none;
+    border: 2px solid white;
+    border-radius: 2rem;
+    height: 80%;
+    width: max-content;
+    margin: .5rem;
+    padding: .5rem;
+
+    white-space: nowrap;
+    
+}
+#topics.dragging li{
+    user-select: none;
+    pointer-events: none;    
+}
+i{
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    opacity: 0.6;
+    padding: 4px;
+    margin-left: 4px;
+    border: 2px solid white;
+    border-radius: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+i:hover{
+    opacity: 1;
+    background-color: rgb(189, 188, 188);
+    box-shadow: 0 0 1rem 1rem rgb(189, 188, 188);
+}
+
+#left{
+    left: 4px;
+}
+#right{
+    right: 4px;
+}
+
+
+.active{
+    background-color: rgba(1, 29, 36, 0.432);
+}

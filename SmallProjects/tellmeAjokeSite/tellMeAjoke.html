@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tellmeajoke</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            min-height: 100vh;
+            min-width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #box1{
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 5rem;
+            font-weight: 1000;
+
+            height: 35vh;
+            width: 100vw;
+            background-color: blue;
+        }
+        #box2{
+            height: 5vh;
+            width: 100vw;
+            background-color: rgba(12, 12, 185, 0.257);
+        }
+        #box3{
+            height: 60vh;
+            width: 100vw;
+            background-color: rgb(16, 16, 13);
+        }
+        #joke{
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 800;
+            border: 20px solid black;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40vh;
+            width: 100vw;
+            background-color: white;
+        }
+        #next{
+            background-color: blue;
+            height: 20vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #next button{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: 800;
+            font-size: large;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <div class="box" id="box1">Tell Me A Joke</div>
+        <div class="box" id="box2">Laugh with Funny Jokes By Paras</div>
+        <div class="box" id="box3">
+            <div id="joke"></div>
+            <div id="next"><button onclick="putJoke">Next Joke</button></div>
+            
+        </div>
+    </div>
+    
+
+    <script src="joke.js">
+
+    </script>
+</body>
+</html>

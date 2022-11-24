@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small sample form validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="heading" class="fdivs">Sample Form By Paras</div>
+<form action="/" method="get" id="form">
+    <div class="fdivs">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        <span id="ename"></span>
+    </div>
+    <div class="fdivs">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="paraschand5815@gmail.com" required>
+        <span id="eemail"></span>
+    </div>
+    <div class="fdivs">
+        <label for="number">Phone</label>
+        <input type="number" min="0" id="number" name="number">
+        <span id="enumber"></span>
+    </div>
+    <div class="fdivs">
+        <label for="dob">Date Of Birth</label>
+        <input type="date" name="dob" id="dob">
+        <span id="edob"></span>
+    </div>
+    <div class="fdivs">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
+        <span id="epassword"></span>
+    </div>
+    <div class="fdivs">
+        <button type="submit" id="submit">Submit</button>
+        <button type="reset" id="reset">Reset</button>
+    </div>
+</form>
+
+<script src="script.js"></script>
+</body>
+</html>

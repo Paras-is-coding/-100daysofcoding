@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alarm clock</title>
+    <link rel="stylesheet" " href="style.css">
+</head>
+<body>
+      <navbar id="navbar" >
+        <li>Home</li>
+        <li>About</li>
+        <li>Services</li>
+        <li>ME</li>
+      </navbar>  
+
+      <div id="main">
+        <div id="clock">
+            <div id="text">Set Alarm After</div>
+            <form id="form">
+                <div id="input">
+                    <input class="ibox" type="number" id="hours" placeholder="Hours" max="24" min="0">
+                    <input class="ibox" type="number" id="minutes" placeholder="Minutes" max="60" min="0">
+                    <input class="ibox" type="number" id="seconds" placeholder="Seconds" max="60" min="0">
+                </div>
+            </form>   
+            <div id="buttons">
+                <button id="set" class="btn">Set</button>
+                <button id="clear" class="btn">Clear</button>
+            </div>         
+        </div>
+      </div>
+
+
+
+      <script src="script.js"></script>
+</body>
+</html>

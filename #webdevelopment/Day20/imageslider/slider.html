@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-color: black;
+        }
+        .center{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            height: 25rem;
+            width: 35rem;
+            overflow: hidden;
+            background: url('Images/img1.jpg') no-repeat center center/cover;
+            box-shadow: 0 0 6px 4px white,
+            0 0 12px 8px blue;
+        }
+
+        .selectors{
+            position: absolute;
+            bottom: .5rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .selectors button{
+            height: .8rem;
+            width: 1.2rem;
+            margin: 4px;
+            background-color: black;
+            border: 1px solid white;
+                }
+
+            .active{
+                box-shadow: 0 0 8px 5px blue;
+            }
+        
+    </style>
+</head>
+<body>
+
+    <div class="center">
+        <div class="selectors">
+            <button class="active"></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+        </div>
+    </div>
+    
+
+    <script>
+
+        
+        let btns = document.getElementsByTagName("button");
+        let buttons = Array.from(btns);
+        buttons.forEach((value,index)=>{
+            value.addEventListener("click",()=>{
+                document.querySelector('.active').classList.remove("active");
+                value.classList.add("active");
+
+                let place = document.getElementsByClassName("center")[0];
+                console.log(`Images/img${index+1}`)
+                place.style.backgroundImage = `url("Images/img${index+1}.jpg")`;
+                selected = index;
+            })
+        })
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+#navbar{
+    min-height: 6rem;
+    display: flex;
+    background-color: brown;
+}
+#navbar h2{
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+#main{
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* #wrap{
+    border: 2px solid black;
+} */
+#showpassword{
+    border-radius: 1rem;
+    box-shadow: 0 0 4px 2px brown;
+    height: 4rem;
+    width: 30rem;
+    font-size: 2rem;
+    padding: .5rem;
+    text-align: center;
+}
+#buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#generate{
+    height: 2.5rem;
+    width: 5rem;
+    margin: 1rem;
+    padding: 4px;
+    font-weight: bolder;
+    background-color: brown;
+    color: white;
+    border: 2px solid white;
+    box-shadow: 0 0 4px 3px brown;
+    border-radius: 1rem;
+    position: relative;
+}
+#type{
+    display: none;
+    background-color: grey;
+    position: absolute;
+    top: 80%;
+}
+.options{
+    padding: .5rem;
+    border-radius: .5rem;
+    box-shadow: 0 0 2px 1px grey;
+}
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 3rem;
+    background-color: brown;
+    color: white;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
+i{
+    color: white;
+    margin: 4px;
+}
