@@ -1,0 +1,98 @@
+     *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: black;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .calculator{
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 30rem;
+            width: 20rem;
+            border: 2px solid white;
+            box-shadow: 0 0 3px 2px white,0 0 4px 3px blue;
+            border-radius: 2rem;
+            color: white;
+        }
+        .screen{
+            border: 2px solid white;
+            box-shadow: 0 0 3px 2px white,0 0 4px 3px blue;
+            border-radius: 1rem;
+        
+            height: 18%;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+        }
+        #previous{
+            height: 40%;
+            width: 100%;
+            /* border: 1px solid white; */
+            color: white;
+            text-align: end;
+        }
+        #current{
+            height: 60%;
+            width: 100%;
+            /* border: 1px solid white; */
+            color: white;
+            text-align: end;
+            font-size: 1.5rem;
+            
+        }
+        
+        .buttons{
+            height: 2.5rem;
+            width: 2.5rem;
+            margin: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid white;
+            border-radius: 40%;
+        }
+
+        .buttons-wrapper{
+            height: 80%;
+            width: 90%;
+            /* border: 2px solid white; */
+            color: white;
+            display: grid;
+            grid-template-columns: repeat(4,auto);
+        }
+        #equals{
+        
+            width: auto;
+            grid-column: 3 / span 2;
+        }
+
+        .light{
+            box-shadow: 0 0 3px 2px white,0 0 4px 3px blue;
+        }
+
+        footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 3rem;
+    background-color: black;
+    box-shadow: 0 0 6px 4px white, 0 0 10px 6px blue;
+    color: white;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
+i{
+    color: white;
+    margin: 4px;
+}
