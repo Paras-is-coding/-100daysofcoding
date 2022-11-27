@@ -22,7 +22,6 @@ body{
     box-shadow: 0 0 4px 2px var(--border-color);
     display: flex;
     height: 4rem;
-    width: 100%;
     border-radius: 1rem;
 }
 #navbar #navbar-left{
@@ -61,7 +60,7 @@ body{
 
 #navbar-right{
     height: 100%;
-    width: 40%;
+    width: 40vw;
 }
 #navbar-right #theme-picker{
     box-shadow: 0 0 4px 2px var(--text-color);
@@ -94,20 +93,20 @@ body{
 }
 
 #main{
-    width: 100vw;
     margin-top: 2rem;
 }
 .blogs{
-    margin:0;
-    /* width: 100%; */
+    margin:2rem;
     display: grid;
-    column-gap: 4rem;
-    grid-template-columns: repeat(3,auto);
+    row-gap: 4rem;
+    column-gap: 6rem;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 .blocks{ 
     background-color: var(--bg-color);
-    padding: 4rem;
-    margin: 2rem; 
+    height: auto;
+    /* padding: 4rem ;  */
+    /* margin: 4rem;  */
     box-shadow:inset 0 0 4px 2px var(--darker-bg-color), 0 0 6px 6px var(--border-color);
     border-radius: 1rem;
 }
