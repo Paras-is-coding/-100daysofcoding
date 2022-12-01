@@ -1,0 +1,192 @@
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color:rgba(253, 165, 207, 0.284);
+    position: relative;
+}
+/* body::before{
+    content: "";
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: url("demo.jpg") no-repeat center center/cover;
+    z-index: -1;
+    opacity: .6;
+} */
+
+#navbar{
+    display: flex;
+    height: 6rem;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(146, 65, 79, 0.7);
+}
+#navbar #left{
+    display: flex;
+    height: 4rem;
+    align-items: center;
+}
+#navbar #left #logo{
+    margin: 1rem 2rem;
+    height: 3.5rem;
+    width: 3.5rem;
+}
+#navbar #left #logo img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+#navbar #left #links{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 4px;
+}
+#navbar #left #links li{
+    height: 5rem;
+    padding:0rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+#navbar #left #links li:hover{
+    box-shadow: 0 0 4px 3px black;
+}
+#navbar #left #links li a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+}
+
+#navbar #right{
+    margin: 2rem;
+    display: flex;
+    height: 4rem;
+    align-items: center;
+    gap: 3rem;
+}
+#navbar #right input{
+    height: 3.5rem;
+    width: 20rem;
+    font-size: 1.5rem;
+    outline: none;
+    box-shadow: 0 0 2px 2px rgba(108, 81, 85, 0.501);
+    padding: 0 1rem;
+    border-radius: 1rem;
+}
+#navbar #right input:hover{
+    box-shadow: 0 0 6px 4px rgba(108, 81, 85, 0.501);
+}
+#navbar #right input:focus{
+    box-shadow: 0 0 6px 6px rgba(108, 81, 85, 0.501);
+}
+#navbar #right #cart i{
+}
+
+#main{
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.categories{
+    margin: 2rem 0rem;
+    display: grid;
+    grid-template-columns: repeat(5,auto);
+    gap: 1rem;
+}
+
+.box{
+    padding: .8rem;
+    border-radius: 1rem;
+    width: 20rem;
+    background:linear-gradient(to right,rgba(226, 176, 184, 0.8),rgba(177, 88, 103, 0.8));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.box:hover{
+    box-shadow: 0 0 8px 6px black;
+    transition: box-shadow .2s ease-in-out;
+}
+.box .image{
+    width: 100%;
+    height: 15rem;
+    border-radius: 1rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    box-shadow: 0 0 6px 4px grey,0 0 4px 2px pink;
+}
+.box .title{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    padding: .8rem;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.box .description{
+    padding:.8rem;
+    height: 10rem;
+    overflow-y:scroll;
+    
+}
+/* .box .description::-webkit-scrollbar-track {
+    border: 1px solid #000;
+    padding: 2px 0;
+    background-color: #404040;
+} */
+
+.box .description::-webkit-scrollbar {
+    width: 10px;
+    display: none;
+}
+
+/* .box .description::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #737272;
+    border: 1px solid #000;
+} */
+.box .price{
+    margin: 4px 0px;
+    width: 100%;
+    background: linear-gradient(to right,rgb(181, 181, 7),rgb(204, 127, 140));
+    font-size: 1.4rem;
+    color: black;
+    text-align: center;
+    font-weight: bolder;
+}
+.box .add-remove{
+    width: 100%;
+    padding: .5rem 0rem;
+    margin: .5rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.box .add-remove button{
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: .4rem;
+    border: none;
+}
+.box .add-remove button:hover{
+    box-shadow: 0 0 4px 2px black;
+}
+.box .add-remove #add{
+    background:linear-gradient(to right,greenyellow,green);
+}
+.box .add-remove #remove{
+    background:linear-gradient(to right,brown,red);
+}

@@ -105,7 +105,7 @@ body{
 .blocks{ 
     background-color: var(--bg-color);
     height: auto;
-    /* padding: 4rem ;  */
+    padding: 4rem ; 
     /* margin: 4rem;  */
     box-shadow:inset 0 0 4px 2px var(--darker-bg-color), 0 0 6px 6px var(--border-color);
     border-radius: 1rem;
