@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop divs</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: rgb(244, 243, 243);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .container{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 50px 0;
+            gap: 50px;
+        }
+        .container .drop{
+            position: relative;
+            width: 350px;
+            height: 350px;
+            box-shadow: inset 30px 30px 20px rgba(0, 0, 0, 0.051),25px 35px 20px rgba(0, 0, 0, 0.051), 25px 30px 30px rgba(0, 0, 0, 0.051),inset -20px -20px 25px rgba(255, 255, 255, 0.4);
+            transition: all 0.5s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container .drop:nth-child(1){
+            border-radius: 48% 52% 76% 24% / 69% 78% 22% 31% ;
+        }
+        .container .drop:nth-child(2){
+            border-radius: 48% 52% 72% 28% / 28% 41% 59% 72% ;
+        }
+        .container .drop:nth-child(3){
+            border-radius: 32% 68% 59% 41% / 53% 57% 43% 47% ;
+        }
+        .container .drop:hover{
+            border-radius: 50%;
+            
+        }
+
+        .container .drop::before{
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 65px;
+            width: 35px;
+            height: 35px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.9;
+        }
+        .container .drop::after{
+            content: '';
+            position: absolute;
+            top: 80px;
+            left: 110px;
+            width: 15px;
+            height: 15px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.9;
+        }
+
+        .container .drop .content{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 40px;
+            gap: 13px;
+        }
+        .container .drop .content h1{
+            position: inherit;resize: ;
+            width: 80px;
+            height: 80px;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.108),inset -2px -5px 10px rgba(0, 0, 0, 0.108);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color);
+        }
+
+        .container .drop .content button{
+            position: relative;
+            padding: 10px 25px;
+            background-color: var(--color
+            );
+            border: none;
+            text-decoration: none;
+            color: white;
+            border-radius: 25px;
+            font-weight: 500;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.147);
+            opacity: 0.75;
+            transform: 0.5s;
+            margin: 10px 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="drop" style="--color:rgba(179, 77, 145, 0.9);">
+        <div class="content">
+            <h1>01</h1>
+            <p>Lorem ipsum dolor laudantium suscipit neque harum, debitis corrupti autem a dolorum ad quaerat earum error! Molestias, ipsa.</p>
+            <button>Read More</button>
+        </div>
+        </div>
+        <div class="drop" style="--color:rgba(160, 83, 28, 0.9);">
+        <div class="content">
+            <h1>02</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adip harum, debitis corrupti autem a dolorum ad quaerat earum error! Molestias, ipsa.</p>
+            <button>Read More</button>
+        </div>
+        </div>
+        <div class="drop" style="--color:rgba(48, 92, 121, 0.9);">
+        <div class="content">
+            <h1>03</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicin, debitis corrupti autem a dolorum ad quaerat earum error! Molestias, ipsa.</p>
+            <button>Read More</button>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

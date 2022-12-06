@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interest Calculator</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+    body {
+        min-height: 100vh;
+        background: linear-gradient(to right,grey,blue);
+        position: relative;
+    }
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 40px;
+        background: white;
+        box-shadow: rgb(38, 55, 77) opx 20ox 30px -10px;
+        border-radius: 5px;
+    }
+    .container:hover{
+        box-shadow: 0 0 4px 0px white,0 0 6px 8px blue,inset 0 0 2px 0px blue;
+    }
+    h1 {
+        text-align: center;
+        margin-top: 0%;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    }
+    form {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        display: flex;
+        flex-direction: column;
+    }
+    button{
+        border: none;
+        font-size: 1.5rem;
+        height: 3rem;
+        margin: 1rem 0;
+        padding: .5rem;
+        border-radius: 1rem;
+        background-color: green;
+    }
+    button:hover{
+        box-shadow: 0 0 4px 4px black;
+    }
+    input,#resultInterest,#finalAmount{
+        padding: .5rem .5rem;
+        font-size: 1.1rem;
+        display: inline-block;
+        width: 100%;
+        height: 1.5rem;
+        box-shadow: 0 0 1px 2px rgb(33, 119, 152);
+        outline: none;
+        border: none;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    input:hover{
+        box-shadow: 0 0 2px 2px rgb(33, 119, 152);
+        transform: scale(1.08);
+        transition: .5s;
+    }
+    input:focus{
+        box-shadow: 0 0 2px 4px rgb(33, 119, 152);
+    }
+    h3{
+        text-align: center;
+        margin: .2rem;
+        margin-top: 1rem;
+        font-size: 1.3rem;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+    <h1>Interest Calculator</h1>
+    <div class="line"></div>
+    <form action="#">
+        <h3>Enter Principal($)</h3>
+        <input type="text" id="principal" placeholder="Enter amount without dollar sign"/>
+        <h3>Enter amount of interest</h3>
+        <input
+        type="text"
+        id="interest"
+        placeholder="Enter interest rate"
+        />
+        <h3>Enter Years (yr)</h3>
+        <input type="tel" id="year" placeholder="Enter time in years" />
+        <button class="btn" id="button">Calculate</button>
+
+        <h3>Final Interest</h3>
+        <span id="resultInterest"></span>
+        <h3>Final Amount</h3>
+        <span id="finalAmount"></span>
+    </form>
+    </div>
+
+    <script>
+    let principal = 0;
+    let interestRate = 0;
+    let termOfLoan = 0;
+    let interest = 0;
+    let buttonClick = document.getElementById("button");
+    buttonClick.addEventListener("click", function () {        
+        principal = parseFloat(document.getElementById("principal").value);
+        interestRate = parseFloat(document.getElementById("interest").value);
+        termOfLoan = parseFloat(document.getElementById("year").value);
+        interestRate = interestRate / 100;
+        interest = principal * interestRate * termOfLoan;
+        amount = (principal + interest).toFixed(2);
+        document.getElementById("resultInterest").innerHTML ="$" + interest.toFixed(2);
+        document.getElementById("finalAmount").innerHTML = "$" + amount;
+    });
+    </script>
+</body>
+</html>
